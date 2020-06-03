@@ -1,0 +1,12 @@
+<h2>MENIUL BARULUI</h2>
+
+<table>
+    <tr>
+        <th>Denumire produs</th>
+        <th>Pret produs</th>
+    </tr>
+    <tr *ngFor="let produs of produse">
+        <th>{{produs.denumire}}</th>
+        <th>{{produs.pret}} RON</th>
+    </tr>
+</table>

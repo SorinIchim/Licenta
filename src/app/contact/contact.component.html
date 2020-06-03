@@ -1,0 +1,49 @@
+<h2>Contact</h2>
+
+<div id="locatie">
+    <h3>Locatie:</h3>
+    <p>Iasi, str. Strada nr. 1</p>
+</div>
+<br>
+
+<div id="telefon">
+    <h3>Telefon:</h3>
+    <ul>
+        <li>079 999 999</li>
+        <li>078 888 888</li>
+    </ul>
+</div>
+<br>
+
+<div id="program">
+    <h3>Program:</h3>
+    <span><strong>Luni-Joi:</strong></span>
+    <span> 09:00 - 00:30</span>
+    <br>
+    <span><strong>Vineri-Duminica:</strong></span>
+    <span> 09:00 - 02:30</span>
+</div>
+<br>
+
+<div id="mesaj">
+    <h3>Trimite un mesaj</h3>
+    <form [formGroup]="mesaj" (ngSubmit)="onSubmit()">
+        <label>
+            Nume:
+            <input type="text" formControlName="nume" required>
+        </label>
+        <label>
+            Prenume:
+            <input type="text" formControlName="prenume" required>
+        </label>
+        <label>
+            Email:
+            <input type="text" formControlName="email" required>
+        </label>
+        <label>
+            Mesajul dumneavoastra:
+            <input type="text" formControlName="mesajTxt" required>
+        </label>
+        <button type="submit">Trimite!</button>
+    </form>
+</div>

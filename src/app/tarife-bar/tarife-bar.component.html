@@ -1,0 +1,48 @@
+<h2>MENIUL BARULUI</h2>
+
+<!-- SEARCH BAR -->
+<div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder="Start searching">
+</div>
+
+<!-- SEARCH BAR VARIANTA DOCS -->
+<!-- <app-produs-search></app-produs-search> -->
+
+<!-- MODIFICA PRODUSUL -->
+<button (click)="save()">save</button>
+
+<!-- ADD PRODUSE -->
+<div>
+    <label>Denumirea produsului:
+      <input #denumireProdus />
+    </label>
+    <label>Pretul produsului:
+        <input #pretProdus />
+      </label>
+    <button (click)="add(denumireProdus.value, pretProdus.value); denumireProdus.value='';pretProdus.value=''">
+      add
+    </button>
+  </div>
+
+<!-- TABLE -->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Denumire produs</th>
+        <th>Pret produs</th>
+    </tr>
+    <tr *ngFor="let produs of produse | filter:searchText">
+        <th>{{produs.id}}</th>
+        <th><input [(ngModel)]="produs.denumire" placeholder="produs.denumire"/></th>
+        <th><input class="pret" [(ngModel)]="produs.pret" placeholder="produs.pret"/>RON</th>
+        <button class="delete" title="sterge produs"
+  (click)="delete(produs)">x</button>
+    </tr>
+</table>
+
+<!-- ZONA DE TEST -->
+<br>
+<h3>Zona de test: Modifica prima inregistrare</h3>
+<div>id: <span>{{produse[0].id}}</span></div>
+<div>denumire: <span>{{produse[0].denumire}}</span></div>
+<div>pret: <span>{{produse[0].pret}}</span></div>

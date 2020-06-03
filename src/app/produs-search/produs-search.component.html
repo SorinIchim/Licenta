@@ -1,0 +1,22 @@
+<div id="search-component">
+    <h4><label for="search-box">Cauta produsul</label></h4>
+  
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Denumire produs</th>
+                <th>Pret produs</th>
+            </tr>
+            <tr *ngFor="let produs of produse$ | async">
+                <th>{{produs.id}}</th>
+                <th><input [(ngModel)]="produs.denumire" placeholder="produs.denumire"/></th>
+                <th><input class="pret" [(ngModel)]="produs.pret" placeholder="produs.pret"/>RON</th>
+                <!-- <button class="delete" title="sterge produs"
+          (click)="delete(produs)">x</button> -->
+            </tr>
+        </table>
+    </ul>
+  </div>
