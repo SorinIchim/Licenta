@@ -13,6 +13,8 @@ export class ContactComponent implements OnInit {
     email: new FormControl(''),
     mesajTxt: new FormControl(''),
   });
+
+  maps = 'assets/Imagini/maps.jpg';
   constructor() { }
   onSubmit(){
     //Salveaza datele in baza de date
